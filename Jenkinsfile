@@ -15,8 +15,7 @@ options {
         stage('Deploy Docker Container Apps') { 
             steps {
                 sh 'cd /var/lib/jenkins/apps/spring-boot-monitoring-sample-master'
-                sh 'docker-compose -f docker-compose/docker-compose.yml build'
-                sh 'docker-compose up' 
+                sh '/usr/local/bin/docker-compose up'
             }
         }
     }
