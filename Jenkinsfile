@@ -11,9 +11,9 @@ options {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Docker Login') { 
+        stage('Deploy Docker Container') { 
             steps {
-                sh 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/b4k3v0g6' 
+                sh '/home/ec2-user/spring-boot-monitoring-sample-master/docker-compose up' 
             }
         }
     }
