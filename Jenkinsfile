@@ -14,8 +14,8 @@ options {
         
         stage('Deploy Docker Container Apps') { 
             steps {
-                sh 'aws ecr get-login-password --region us-east-1 | docker login --username jenkins --password-stdin 031440218568.dkr.ecr.us-east-1.amazonaws.com'
                 sh 'cd /var/lib/jenkins/apps/spring-boot-monitoring-sample-master'
+                sh 'docker-compose -f docker-compose/docker-compose.yml build'
                 sh 'docker-compose up' 
             }
         }
