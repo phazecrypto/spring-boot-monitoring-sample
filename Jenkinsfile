@@ -14,7 +14,7 @@ options {
         
         stage('Deploy Docker Container Apps') { 
             steps {
-                sh 'sudo /home/ec2-user/spring-boot-monitoring-sample-master/docker-compose up' 
+                sh '/home/ec2-user/spring-boot-monitoring-sample-master/docker-compose up' 
             }
         }
     }
