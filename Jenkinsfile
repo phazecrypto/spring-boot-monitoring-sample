@@ -5,13 +5,13 @@ options {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Build Spring-boot') {
+        stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
 
-        stage('Deploy Docker Container Apps') { 
+        stage('Deploy Docker') { 
             steps {
                 sh 'cd /var/lib/jenkins/apps/spring-boot-monitoring-sample-master'
                 sh '/usr/local/bin/docker-compose up -d'
