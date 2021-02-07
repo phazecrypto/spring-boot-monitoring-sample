@@ -17,5 +17,11 @@ options {
                 sh '/usr/local/bin/docker-compose up -d'
             }
         }
+        
+        stage('Push Docker to ECR') {
+            steps {
+                sh 'docker push 031440218568.dkr.ecr.us-east-1.amazonaws.com/fampoc:latest'
+            }
+        }
     }
 }
