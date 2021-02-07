@@ -20,7 +20,7 @@ options {
         
         stage('Push Docker to ECR') {
             steps {
-                
+                sh 'aws ecr get-login-password --region us-east-1 --profile=default | docker login --username AWS --password-stdin 031440218568.dkr.ecr.us-east-1.amazonaws.com'
                 sh 'docker push 031440218568.dkr.ecr.us-east-1.amazonaws.com/fampoc:latest'
             }
         }
